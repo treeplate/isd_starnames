@@ -234,11 +234,11 @@ class _MyHomePageState extends State<MyHomePage>
       starOptions = allStars.where((star) {
         if (star & 0x3 != 2) return false;
         if (int.tryParse(number1.text) != null) {
-          int left = ((star >> 13) & 0x7ffe) ^ 0x555;
+          int left = ((star >> 13) & 0x7ff) ^ 0x555;
           if (left != int.tryParse(number1.text)) return false;
         }
         if (int.tryParse(number2.text) != null) {
-          int right = ((star >> 1) & 0xfffe) ^ 0x555;
+          int right = ((star >> 1) & 0xffe) ^ 0x555;
           if (right != int.tryParse(number2.text)) return false;
         }
         return true;
